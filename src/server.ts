@@ -1,5 +1,6 @@
 import express, { Request, Response } from "express";
 import connectToDatabase from "./db";
+import userRoutes from "./routes/user.routes";
 
 const application = express();
 
@@ -11,6 +12,7 @@ connectToDatabase();
 application.get("/ping", (request: Request, response: Response) => {
   response.send("Pong");
 });
+application.use("/users", userRoutes);
 
 application.listen(PORT, () => {
   console.log("Server up and running");
