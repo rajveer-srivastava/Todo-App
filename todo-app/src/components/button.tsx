@@ -1,11 +1,12 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet } from "react-native";
 import React from "react";
+import { Box, Text } from "@/utils/theme";
 
 const Button = () => {
   return (
-    <View>
-      <Text>Button is working</Text>
-    </View>
+    <Box bg="primary" p="4" borderRadius="rounded-3xl">
+      <Text color="white">Button is working</Text>
+    </Box>
   );
 };
 

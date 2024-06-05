@@ -9,6 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@shopify/restyle": "^2.4.4",
     "babel-plugin-module-resolver": "^5.0.2",
     "expo": "~51.0.9",
     "expo-status-bar": "~1.12.1",
