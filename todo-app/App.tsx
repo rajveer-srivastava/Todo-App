@@ -1,16 +1,16 @@
-import Button from "@/components/button";
 import { ThemeProvider } from "@shopify/restyle";
 import theme, { Text } from "@/utils/theme";
-import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View } from "react-native";
+import Navigation from "@/navigation";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import { StatusBar } from "expo-status-bar";
 export default function App() {
   return (
     <ThemeProvider theme={theme}>
-      <View style={styles.container}>
-        <Text variant="text3Xl">Hello World!</Text>
-        <Button />
-        <StatusBar style="auto" />
-      </View>
+      <SafeAreaProvider>
+        <Navigation />
+        <StatusBar translucent />
+      </SafeAreaProvider>
     </ThemeProvider>
   );
 }
