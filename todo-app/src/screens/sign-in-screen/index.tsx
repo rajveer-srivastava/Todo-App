@@ -1,24 +1,38 @@
-import React from "react";
-import { Box, Text } from "@/utils/theme";
-import { Button } from "react-native";
-import { useNavigation } from "@react-navigation/native";
-import { AuthScreenNavigationType } from "@/navigation/types";
+import Button from "@/components/shared/button";
+import Input from "@/components/shared/input";
 import SafeAreaWrapper from "@/components/shared/safe-area-wrapper";
+import { AuthScreenNavigationType } from "@/navigation/types";
+import { Box, Text } from "@/utils/theme";
+import { useNavigation } from "@react-navigation/native";
+import React from "react";
+import { Pressable } from "react-native";
 
 const SignInScreen = () => {
-  const navigation = useNavigation<AuthScreenNavigationType<"SignUp">>();
-  const navigateToSignInScreen = () => {
-    navigation.navigate("SignIn");
+  const navigation = useNavigation<AuthScreenNavigationType<"SignIn">>();
+  const navigateToSignUpScreen = () => {
+    navigation.navigate("SignUp");
   };
 
   return (
     <SafeAreaWrapper>
-      <Box>
-        <Text>Sign In Screen</Text>
-        <Button
-          title="Navigate to sign in "
-          onPress={navigateToSignInScreen}
-        ></Button>
+      <Box flex={1} px="5.5" justifyContent="center">
+        <Text variant="textXl" fontWeight="700">
+          Welcome Back
+        </Text>
+
+        <Input label="Email" />
+        <Box mb="6" />
+
+        <Input label="Password" />
+        <Box mt="5.5" />
+        <Pressable onPress={navigateToSignUpScreen}>
+          <Text color="primary" textAlign="right">
+            Register?
+          </Text>
+        </Pressable>
+        <Box mb="5.5" />
+
+        <Button label="Register" onPress={navigateToSignUpScreen} uppercase />
       </Box>
     </SafeAreaWrapper>
   );
